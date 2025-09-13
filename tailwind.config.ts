@@ -57,6 +57,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // SenBay brand colors
+        'senbay-blue': {
+          DEFAULT: "hsl(var(--senbay-blue))",
+          dark: "hsl(var(--senbay-blue-dark))",
+          light: "hsl(var(--senbay-blue-light))",
+          subtle: "hsl(var(--senbay-blue-subtle))",
+        },
+        'lotus': {
+          primary: "hsl(var(--lotus-primary))",
+          shadow: "hsl(var(--lotus-shadow))",
+        },
+        'travel': {
+          success: "hsl(var(--travel-success))",
+          warning: "hsl(var(--travel-warning))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

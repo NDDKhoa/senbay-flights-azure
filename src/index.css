@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* SenBay Flight Booking - Design System
+Vietnamese lotus flower theme with bright blue branding
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core brand colors */
+    --senbay-blue: 213 100% 65%;           /* #4DA6FF */
+    --senbay-blue-dark: 213 90% 55%;      /* Darker blue for hover states */
+    --senbay-blue-light: 213 100% 85%;    /* Light blue for backgrounds */
+    --senbay-blue-subtle: 213 50% 95%;    /* Very light blue */
+    
+    /* Neutral palette */
+    --background: 0 0% 100%;               /* Pure white */
+    --foreground: 215 25% 27%;             /* Dark blue-gray text */
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 215 25% 27%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 215 25% 27%;
+    
+    /* Primary uses SenBay blue */
+    --primary: 213 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary soft grays */
+    --secondary: 215 15% 96%;
+    --secondary-foreground: 215 25% 27%;
+    
+    --muted: 215 15% 96%;
+    --muted-foreground: 215 12% 45%;
+    
+    --accent: 213 50% 95%;
+    --accent-foreground: 213 100% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 215 20% 90%;
+    --input: 215 20% 94%;
+    --ring: 213 100% 65%;
+    
+    /* SenBay specific tokens */
+    --lotus-primary: 213 100% 65%;         /* Main lotus/brand color */
+    --lotus-shadow: 213 100% 65%;          /* For glows and shadows */
+    --travel-success: 142 76% 36%;         /* Green for confirmations */
+    --travel-warning: 43 96% 56%;          /* Amber for alerts */
+    
+    /* Layout */
+    --radius: 0.75rem;                     /* Rounded corners */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--lotus-shadow) / 0.1);
+    --shadow-medium: 0 8px 30px -4px hsl(var(--lotus-shadow) / 0.15);
+    --shadow-strong: 0 16px 40px -8px hsl(var(--lotus-shadow) / 0.2);
+    
+    /* Gradients */
+    --gradient-lotus: linear-gradient(135deg, hsl(var(--lotus-primary)), hsl(var(--senbay-blue-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--senbay-blue-subtle)), hsl(var(--background)));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.2s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +128,37 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* SenBay custom component styles */
+  .lotus-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .lotus-shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .lotus-shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-quick {
+    transition: var(--transition-quick);
+  }
+  
+  .gradient-lotus {
+    background: var(--gradient-lotus);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
   }
 }
