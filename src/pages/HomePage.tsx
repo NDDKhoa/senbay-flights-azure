@@ -108,26 +108,57 @@ const HomePage: React.FC = () => {
               <p className="text-xl text-gray-600">Explore the most beautiful places in Vietnam</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { city: 'Hanoi', image: 'bg-gradient-to-br from-red-400 to-red-600', description: 'The cultural heart of Vietnam' },
-                { city: 'Da Nang', image: 'bg-gradient-to-br from-blue-400 to-blue-600', description: 'Beautiful beaches and mountains' },
-                { city: 'Phu Quoc', image: 'bg-gradient-to-br from-green-400 to-green-600', description: 'Tropical paradise island' },
-                { city: 'Nha Trang', image: 'bg-gradient-to-br from-purple-400 to-purple-600', description: 'Coastal beauty and adventures' },
-                { city: 'Hue', image: 'bg-gradient-to-br from-yellow-400 to-yellow-600', description: 'Ancient imperial city' },
-                { city: 'Can Tho', image: 'bg-gradient-to-br from-indigo-400 to-indigo-600', description: 'Mekong Delta gateway' },
-              ].map((destination) => (
-                <div key={destination.city} className="relative overflow-hidden rounded-xl lotus-shadow hover:lotus-shadow-medium transition-smooth cursor-pointer group">
-                  <div className={`h-64 ${destination.image} flex items-end p-6`}>
-                    <div className="text-white">
-                      <h3 className="text-2xl font-bold mb-2">{destination.city}</h3>
-                      <p className="opacity-90">{destination.description}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  { 
+                    city: 'Hanoi', 
+                    image: '/image/hanoi.jpg', 
+                    description: 'The cultural heart of Vietnam' 
+                  },
+                  { 
+                    city: 'Da Nang', 
+                    image: '/image/danang.jpg', 
+                    description: 'Beautiful beaches and mountains' 
+                  },
+                  { 
+                    city: 'Phu Quoc', 
+                    image: '/image/phuquoc.jpg', 
+                    description: 'Tropical paradise island' 
+                  },
+                  { 
+                    city: 'Nha Trang', 
+                    image: '/image/nhatrang.jpg', 
+                    description: 'Coastal beauty and adventures' 
+                  },
+                  { 
+                    city: 'Hue', 
+                    image: '/image/hue.webp', 
+                    description: 'Ancient imperial city' 
+                  },
+                  { 
+                    city: 'Can Tho', 
+                    image: '/image/cantho.jpg', 
+                    description: 'Mekong Delta gateway' 
+                  },
+                ].map((destination) => (
+                  <div 
+                    key={destination.city} 
+                    className="relative overflow-hidden rounded-xl lotus-shadow hover:lotus-shadow-medium transition-smooth cursor-pointer group"
+                  >
+                    {/* Dùng ảnh trong public/image */}
+                    <div 
+                      className="h-64 flex items-end p-6 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${destination.image})` }}
+                    >
+                      <div className="text-white">
+                        <h3 className="text-2xl font-bold mb-2">{destination.city}</h3>
+                        <p className="opacity-90">{destination.description}</p>
+                      </div>
                     </div>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-quick"></div>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-quick"></div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
           </div>
         </section>
       </main>
